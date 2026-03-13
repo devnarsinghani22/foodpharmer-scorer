@@ -223,7 +223,11 @@ def update_sheets(posts: list[dict]):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
+    import random
     print(f"\n🚀 Starting Instagram scorer — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    delay = random.randint(10, 30)
+    print(f"⏳ Waiting {delay}s before hitting Instagram...")
+    time.sleep(delay)
     print("📥 Fetching posts...")
     posts = fetch_posts()
     print(f"   {len(posts)} posts fetched")
